@@ -1,20 +1,19 @@
-addEventListerner('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', function () {
 //this means that this code would run automatically once it's opened
    
-    const button = document.getElementById('submit');
+    const greeting = document.getElementById("greeting");
+    const name = document.getElementById("name");
+    const form = document.getElementById("form");
     //get the input field by its id we assigned on the html given
-    const input = document.getElementById('name')
 
-        button.addEventListener('click', (event) => {event.preventDefault();
+     form.addEventListener("submit", function (event) { 
+        event.preventDefault();
         //preventing the default action of the button so we can change it 
         
-        const name = input.ariaValueMax;
+        const name2 = name.value.trim();
         //get the value of the name by it's input
-        const para = document.getElementById('greeting');
-        //get the paragraph element by it's id
-
-        para.textContent = 'Welcome ${name}!';
-        input.value = '';
+        if(name2)
+        {greeting.textContent = 'Welcome, ' + name2 + '!';}
         });
 
         
